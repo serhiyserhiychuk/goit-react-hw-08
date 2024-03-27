@@ -1,0 +1,28 @@
+.container {
+  width: calc((100% - 36px) / 4);
+  height: 68px;
+  border: 1.5px solid #000000;
+  padding: 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+.list {
+  height: 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.listItem {
+  height: 24px;
+}
+.text {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.button {
+  padding: 4px;
+  cursor: pointer;
+  margin-left: auto;
+}
