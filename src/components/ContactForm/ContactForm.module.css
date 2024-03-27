@@ -1,8 +1,7 @@
 .form {
-  width: 300px;
-  padding: 16px;
+  width: 100%;
+  padding: 16px 4px;
   display: flex;
-  flex-direction: column;
   gap: 16px;
   border: 1.5px solid #000000;
   border-radius: 4px;
@@ -11,11 +10,14 @@
 }
 .container {
   display: flex;
-  flex-direction: column;
+  gap: 8px;
 }
 .button {
   width: 120px;
+  color: #ffffff;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
   margin-left: auto;
-  margin-right: auto;
   cursor: pointer;
 }
