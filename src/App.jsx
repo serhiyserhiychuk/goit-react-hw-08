@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useEffect, lazy, Suspense } from "react";
-import { fetchContacts } from "./redux/contactsOps";
+import { fetchContacts } from "./redux/contacts/operations";
 import { Routes, Route } from "react-router-dom";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));

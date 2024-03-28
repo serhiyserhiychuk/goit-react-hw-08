@@ -1,0 +1,24 @@
+.form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.label {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.button {
+  width: 80px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  color: #ffffff;
+  background-color: red;
+  border-radius: 5px;
+  border: none;
+}
