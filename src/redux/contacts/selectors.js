@@ -5,19 +5,23 @@ export const selectContacts = (state) => state.contacts.items;
 export const selectFilteredContacts = createSelector(
   [selectContacts, selectNameFilter, selectNumberFilter],
   (contacts, filter, number) => {
-    const nameContacts = contacts.filter(
-      (contact) =>
-        contact.name.includes(
-          filter.charAt(0).toUpperCase() + filter.slice(1).toLowerCase()
-        ) || contact.name.startsWith(filter.toLowerCase())
-    );
-    const numberContacts = contacts.filter((contact) =>
-      contact.number.startsWith(number)
-    );
-    if (number === "") {
-      return nameContacts;
+    if (contacts.length !== 0) {
+      const nameContacts = contacts.filter(
+        (contact) =>
+          contact.name.includes(
+            filter.charAt(0).toUpperCase() + filter.slice(1).toLowerCase()
+          ) || contact.name.startsWith(filter.toLowerCase())
+      );
+      const numberContacts = contacts.filter((contact) =>
+        contact.number.startsWith(number)
+      );
+      if (number === "") {
+        return nameContacts;
+      } else {
+        return numberContacts;
+      }
     } else {
-      return numberContacts;
+      return [];
     }
   }
 );

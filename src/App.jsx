@@ -1,6 +1,7 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, lazy, Suspense } from "react";
-import { fetchContacts } from "./redux/contacts/operations";
+import { refreshUser } from "./redux/auth/operations";
+import { selectIsRefreshing } from "./redux/auth/selectors";
 import { Routes, Route } from "react-router-dom";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
@@ -13,11 +14,14 @@ import Loader from "./components/Loader/Loader";
 
 const App = () => {
   const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(refreshUser());
   }, [dispatch]);
-  return (
+  return isRefreshing ? (
+    <Loader />
+  ) : (
     <div>
       <AppBar />
       <Suspense fallback={<Loader />}>

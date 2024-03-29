@@ -1,11 +1,14 @@
+.title {
+  width: 96px;
+  margin: 80px auto 40px auto;
+}
 .form {
   width: 300px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 120px;
   margin-left: auto;
   margin-right: auto;
+  gap: 12px;
 }
 .label {
   display: block;
@@ -21,4 +24,10 @@
   background-color: red;
   border-radius: 5px;
   border: none;
+}
+.text {
+  width: 200px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
 }
