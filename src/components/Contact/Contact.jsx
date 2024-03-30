@@ -1,11 +1,14 @@
 import css from "./Contact.module.css";
 import { FaUser } from "react-icons/fa6";
 import { FaPhone } from "react-icons/fa6";
-import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contacts/operations";
+import { useState } from "react";
+import DeleteModal from "../DeleteModal/DeleteModal";
 
 export default function Contact({ contact }) {
-  const dispatch = useDispatch();
+  const [isOpen, setIsOpen] = useState(false);
+  const closeModal = () => {
+    setIsOpen(false);
+  };
   return (
     <div className={css.container}>
       <ul className={css.list}>
@@ -21,12 +24,10 @@ export default function Contact({ contact }) {
           </p>
         </li>
       </ul>
-      <button
-        className={css.button}
-        onClick={() => dispatch(deleteContact(contact.id))}
-      >
+      <button className={css.button} onClick={() => setIsOpen(true)}>
         Delete
       </button>
+      {isOpen && <DeleteModal onClose={closeModal} id={contact.id} />}
     </div>
   );
 }

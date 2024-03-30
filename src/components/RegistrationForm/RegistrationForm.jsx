@@ -4,7 +4,7 @@ import { useId } from "react";
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
 import css from "./RegistrationForm.module.css";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -51,7 +51,7 @@ export default function RegisterForm() {
   const passwordFieldId = useId();
   return (
     <>
-      <h2 className={css.title}>Register</h2>
+      <h2 className={css.title}>Registration</h2>
       <Formik
         initialValues={registeredUser}
         onSubmit={handleSubmit}
@@ -76,7 +76,6 @@ export default function RegisterForm() {
           <button className={css.button} type="submit">
             Register
           </button>
-          <Toaster />
         </Form>
       </Formik>
       <p className={css.text}>

@@ -2,9 +2,9 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useId } from "react";
 import { useDispatch } from "react-redux";
-import { logIn } from "../../redux/auth/operations";
+import { login } from "../../redux/auth/operations";
 import css from "./LoginForm.module.css";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
@@ -28,7 +28,7 @@ export default function LoginForm() {
   };
 
   const handleSubmit = (loggedUser, actions) => {
-    dispatch(logIn(loggedUser))
+    dispatch(login(loggedUser))
       .unwrap()
       .then(() => {
         toast.success("Logged In successfully!");
@@ -64,7 +64,6 @@ export default function LoginForm() {
           <button className={css.button} type="submit">
             Log In
           </button>
-          <Toaster />
         </Form>
       </Formik>
     </>
